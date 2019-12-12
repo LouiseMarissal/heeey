@@ -146,20 +146,25 @@ export default function Home() {
           ></input>
 
           {!isAlcoholic ? (
-            <span
-              className="fa-stack fa-2x isAlcoholicLogo"
-              onClick={handleClickIsAlcoholic}
-            >
-              <i className="fas fa-cocktail fa-stack-1x"></i>
-              <i className="fas fa-ban fa-stack-2x"></i>
-            </span>
+            <div className="isAlcoholicContainer">              <span
+                className="fa-stack fa-2x isAlcoholicLogo"
+                onClick={handleClickIsAlcoholic}
+              >
+                <i className="fas fa-cocktail fa-stack-1x"></i>
+                <i className="fas fa-ban fa-stack-2x"></i>
+              </span>
+              <span className="isAlcoholicStatement">is Alcoholic ?</span>
+            </div>
           ) : (
-            <span
-              className="fa-stack fa-2x isAlcoholicLogo"
-              onClick={handleClickIsAlcoholic}
-            >
-              <i className="fas fa-cocktail fa-stack-1x"></i>
-            </span>
+            <div className="isAlcoholicContainer">
+              <span
+                className="fa-stack fa-2x isAlcoholicLogo"
+                onClick={handleClickIsAlcoholic}
+              >
+                <i className="fas fa-cocktail fa-stack-1x"></i>
+              </span>
+              <span className="isAlcoholicStatement">is Alcoholic ?</span>
+            </div>
           )}
         </div>
         <div className="blurEffect" id="blurEffect"></div>

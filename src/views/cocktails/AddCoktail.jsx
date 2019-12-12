@@ -211,10 +211,11 @@ const AddCoktail = props => {
                 </div>
 
                 <div className="addCocktail">
-                  <span className="addButton">
+                  <span className="addButton"
+                  onClick={addIngredientInput}>
                     <i
                       className="fas fa-plus button"
-                      onClick={addIngredientInput}
+                      
                     ></i>
                   </span>
                 </div>

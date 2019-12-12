@@ -120,13 +120,12 @@ const AddComment = props => {
                           <span className="userName">
                             {oldMessage.user.name}
                           </span>
+                          <span className="dateMessage">
+                            le {oldMessage.created.substr(0, 10)} à{" "}
+                            {oldMessage.created.substr(11, 5)}{" "}
+                          </span>
                         </div>
                       </div>
-                      <span className="dateMessage">
-                        le {oldMessage.created.substr(0, 10)} à{" "}
-                        {oldMessage.created.substr(11, 5)}{" "}
-                      </span>
-
                       <span className="contentMessage">
                         {oldMessage.message}
                       </span>

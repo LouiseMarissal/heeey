@@ -6,7 +6,10 @@ const List = ({ cocktails, cocktailsFav }) => {
   return (
     <div className="fullcocktail">
       {cocktails.map((cocktail, i) => (
-        <Suspense key={i} fallback={<div>Loading...</div>}>
+        <Suspense
+          key={i}
+          fallback={<img src="./img/shaker.jpg" className="loadingShaker" />}
+        >
           <CocktailCard
             key={i}
             cocktail={cocktail}

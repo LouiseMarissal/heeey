@@ -34,6 +34,7 @@
   background: white;
   color: black;
   border-radius: 10px;
+  padding: 5%;
 }
 
 .newComment {
@@ -59,21 +60,32 @@
 .formComment {
   width: 100% !important;
   margin-top: 7%;
+  font-size: 10px;
 }
 
 .listMessage {
-  width: 100% !important;
+  width: 80% !important;
   list-style: none;
   background: white;
   padding: 30px;
   padding-top: 10px;
-  border-radius: 20px;
+  border-bottom: solid 1px;
   margin-top: 5%;
+  margin-left: 7%
 }
 
 .nameAndPictureContainer {
   display: flex;
   align-items: flex-end;
+}
+
+
+::placeholder {
+  /* Chrome, Firefox, Opera, Safari 10.1+ */
+  color: rgb(190, 189, 189);
+  font-style: italic;
+  opacity: 1;
+  /* Firefox */
 }
 
 .fullUser {
@@ -89,6 +101,7 @@
 }
 
 .contentMessage {
+  margin-top: 10%;
   text-align: start;
   font-size: 1.2em;
 }
@@ -112,12 +125,20 @@
 
 .userName {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-
+  padding-bottom: 10%;
+  margin-right: 100px;
 }
 
 .noMessageYet {
   margin: auto;
   margin-top: 30px;
+}
+
+.dateMessage {
+  font-size: 10px;
+  display: block;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  text-align: start;
 }
 
 .btn-formComment {
