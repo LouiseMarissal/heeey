@@ -1,0 +1,74 @@
+.registertitle,
+.login-title {
+    font-family: "Baloo Bhai", cursive;
+    text-transform: uppercase;
+    color: #ffb200;
+    font-size: 50px;
+    margin-top: 100px;
+}
+
+
+
+.signup-form-container,
+.signin-form-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+.signup-form-container>div {
+    width: 65%;
+}
+
+.signup-form {
+    width: 100%;
+}
+
+.input {
+
+    display: block;
+    margin: 0 0 20px 0;
+    width: 100%;
+    padding: 5px 10px;
+    font-size: 13px;
+    background: #f2f4f5;
+    border: none;
+}
+
+.checkboxregister {
+    width: auto;
+}
+
+.input-isPro {
+    width: auto;
+    margin-left: 20px;
+}
+
+.btn-register,
+.login-btn {
+
+    display: block;
+    background: #ffb200;
+    padding: 9px 40px;
+    border-radius: 5px;
+    color: #fff;
+    border: none;
+    text-transform: uppercase;
+    margin: auto;
+
+}
+
+.login-btn {
+    margin-bottom: 40px;
+}
+
+.link-login {
+    color: black;
+    cursor: pointer;
+}
+
+.link-login:hover {
+    color: black;
+    text-decoration: underline #ffb200 !important;
+}

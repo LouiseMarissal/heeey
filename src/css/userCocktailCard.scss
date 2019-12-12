@@ -1,0 +1,25 @@
+.user-cocktail-list {
+  display: flex;
+  // width: 100%;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-content: center;
+  align-items: center;
+  .user-cocktail-container {
+    /* border: 1px solid; */
+    // width: 25%;
+    font-size: 1.5em;
+    max-height: 100px;
+    max-width: 40px;
+  }
+}
+.Manage {
+  // display: inline-block;
+  background: #ffb200;
+  // padding: 9px 40px;
+  // border-radius: 5px;
+  color: #fff !important;
+  border: none !important;
+
+  // text-transform: uppercase;
+}

@@ -1,0 +1,139 @@
+.fullpage-overflow {
+  overflow: hidden;
+}
+
+.fullPage {
+  background: white;
+  height: 100vh;
+  overflow: scroll;
+  overflow-x: hidden;
+
+  h3 {
+    margin: 0 0 75px 0;
+    font-size: 3em;
+    color: #ffb200;
+    font-family: "Baloo Bhai", cursive;
+    text-transform: uppercase;
+  }
+}
+
+.bannerHome {
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh);
+  background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.2)),
+    url("/img/cocktail-homepage.jpeg");
+  background-position: center center;
+  margin-bottom: 50px;
+
+  > div {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  h1 {
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    color: #fff;
+    font-size: 4em;
+  }
+
+  h2 {
+    font-size: 1.2em;
+    color: #fff;
+    font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+      "Lucida Sans", Arial, sans-serif;
+    // font-family: "Niconne", cursive;
+  }
+
+  .arrow {
+    padding: 20px;
+    cursor: pointer;
+
+    i {
+      color: #fff;
+    }
+  }
+}
+
+#cocktailContent {
+  position: relative;
+  padding-top: 40px;
+  height: 100vh;
+}
+
+.fullcocktail {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  /*HEIGHT IS IMPORTANT, PLEASE INFORM ME IF YOU CHANGE IT, THANKS, PH */
+  height: 77vh;
+  width: 100vw;
+  z-index: 1;
+}
+
+.fullPageHeader {
+  // z-index: 3;
+  margin: 0 40vw;
+  background: transparent;
+  padding: 0 7px;
+  z-index: 6 !important;
+  width: 250px;
+  display: flex;
+  align-items: flex-start;
+}
+
+.fullPageHeader,
+.blurEffect {
+  top: 0;
+  position: sticky;
+  // backdrop-filter: blur(5px);
+  text-align: center;
+}
+
+.blurEffect {
+  z-index: 2;
+  width: 100vw;
+  margin-top: -60px;
+  height: 8vh;
+  backdrop-filter: blur(6px);
+  font-size: 50px;
+  text-align: center;
+  line-height: 100px;
+  background: rgba(250, 250, 250, 0.3);
+}
+
+.searchBarHome {
+  color: orange;
+  font-size: 22px;
+  border: none;
+  border-bottom: 1px solid grey;
+  background: transparent;
+  margin-top: 7px;
+}
+
+::placeholder {
+  color: black;
+}
+
+.isAlcoholicLogo {
+  display: flex;
+  align-items: center;
+  margin-left: 50px;
+  font-size: 1.6em;
+}
+
+.fa-cocktail {
+  margin-left: 9px;
+}
+
+.fa-ban {
+  font-size: 1.5em;
+  color: orange;
+}
+
+.isAlcoholicLogo:hover {
+  cursor: pointer;
+  color: orange;
+}

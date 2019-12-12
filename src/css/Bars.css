@@ -1,0 +1,98 @@
+.black {
+  color: black;
+}
+
+.black .lover {
+  color: red;
+}
+
+.black .mixo {
+  color: black;
+}
+
+.black .link {
+  color: black;
+}
+
+.link>i {
+  color: white;
+}
+
+.black .link>i {
+  color: black;
+}
+
+.login {
+  margin-bottom: -15px;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
+.nav-bar {
+  background: none;
+  position: fixed;
+  width: 100vw;
+  z-index: 6;
+  height: 50px !important;
+}
+
+.userProfilePicture {
+  height: 35px;
+  width: 35px;
+  border-radius: 50%;
+  margin-right: 10px;
+  /* border-bottom: -20px; */
+}
+
+.regular {
+  background: black;
+  width: 100vw;
+  height: 45px;
+
+}
+
+.regular .mixo {
+  color: white;
+}
+
+.regular .link {
+  color: white;
+}
+
+.link:hover {
+  color: orange !important;
+  text-decoration: none;
+}
+
+.sideLinkContainer {
+  height: 100%;
+  font-size: 1.2em;
+  display: flex;
+  align-items: center;
+}
+
+.active {
+  color: red !important;
+}
+
+.home-nav {
+  display: flex;
+  margin-top: 8px;
+}
+
+.lover {
+  text-decoration: none;
+  margin-left: -15px;
+  color: red;
+  font-family: "Niconne", cursive !important;
+  font-size: 2.5em;
+}
+
+.mixo {
+  color: white;
+  text-decoration: none;
+  font-size: 2em;
+  font-family: "Baloo Bhai", cursive !important;
+}

@@ -1,0 +1,181 @@
+ul {
+  padding: 0;
+}
+
+/* EVITER LES TAILLES FIXES */
+.CocktailCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 0 30px 0;
+}
+
+.cocktailCardNameContainer {
+  width: 25vw;
+  height: auto;
+}
+
+.cocktailName {
+  margin: 0 0 10px 0;
+  text-align: center;
+  color: black;
+  font-weight: 600;
+  text-decoration-color: orange;
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
+  text-transform: uppercase;
+  font-size: 1.5em;
+  text-decoration: none;
+}
+
+.cocktailName:hover {
+  color: orange;
+  /* text-decoration-color: orange; */
+  text-decoration: none;
+}
+
+.photo {
+  /* background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, .2)); */
+  width: 300px;
+  height: 300px;
+  border-radius: 12px;
+  background-size: cover !important;
+  background-position: center !important;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 300px;
+  height: 300px;
+  /* border: 1px solid #f1f1f1; */
+  perspective: 1000px;
+  /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 1.2s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: 12px;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+  padding: 2%;
+  /* background: url(./../images/test5.jpg); */
+  background: black;
+  color: white;
+  transform: rotateY(180deg);
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.ingredient {
+  list-style-type: none;
+}
+
+.heart,
+.heartOrange {
+  margin-left: 90%;
+  transition: all ease-in-out 0.3s;
+  display: flex;
+  justify-content: flex-end;
+}
+
+.cheersOrange {
+  color: orange;
+}
+
+.heartOrange:hover,
+.heart:hover,
+.cheers:hover,
+.cheersWhite:hover {
+  cursor: pointer;
+}
+
+@keyframes rotateBox {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  25% {
+    transform: rotate(-25deg);
+  }
+
+  50% {
+    transform: rotate(0deg);
+  }
+
+  75% {
+    transform: rotate(25deg);
+  }
+
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+.is-rotating {
+  animation: 0.5s linear 0s rotateBox, 0.5s linear 0s;
+}
+
+.cheers {
+  z-index: 10;
+  font-size: 1.4em;
+}
+
+.likeCounter {
+  padding-left: 10px;
+}
+
+.tagsListContainer {
+  width: 100%;
+  display: grid;
+  grid-auto-columns: 1fr;
+  grid-auto-flow: column;
+  grid-gap: 5px;
+}
+
+.tagContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 0 10%;
+}
+
+.tagDisplay {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  max-width: 100px;
+  height: 30px;
+  border-radius: 5px;
+  background-color: orange;
+}
