@@ -5,7 +5,7 @@ import "./css/Bars.css";
 import "./css/signup-in.css";
 import NavBar from "./components/Bars/NavBar";
 import Home from "./views/Home";
-import PageFourOhFour from "./views/PageFourOhFour";
+// import PageFourOhFour from "./views/PageFourOhFour";
 import OneCocktail from "./views/cocktails/OneCocktail";
 import Login from "./views/account/login";
 import Signup from "./views/account/signup";
@@ -55,7 +55,7 @@ function App(props) {
               component={EditCocktail}
             />
             {/* <ProtectedRoute path="/logout" /> */}
-            <Route path="*" component={PageFourOhFour} />
+            {/* <Route path="*" component={PageFourOhFour} /> */}
           </Switch>
         </div>
       )}
