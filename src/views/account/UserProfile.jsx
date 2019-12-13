@@ -25,7 +25,7 @@ const UserProfile = props => {
       )
       .then(dbRes => {
         setFavorites(dbRes.data.favorites);
-        setNewFavorites(...favorites, dbRes.data);
+        setNewFavorites(...favorites);
         // console.log(dbRes.data.favorites);
       })
       .catch(dbErr => {
@@ -62,6 +62,7 @@ const UserProfile = props => {
         }
       )
       .then(dbRes => {
+        console.log(dbRes.data);
         setUserCocktails(dbRes.data);
       })
       .catch(err => {
@@ -83,6 +84,8 @@ const UserProfile = props => {
         console.log(err);
       });
   };
+
+  console.log(favorites);
 
   if (isLoading || !currentUser) return null;
 

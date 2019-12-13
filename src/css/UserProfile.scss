@@ -84,10 +84,13 @@
   }
 }
 .UserPhotoProfile {
-  width: 23%;
+  width: 20%;
   border-radius: 50%;
 }
 .user-cocktail-list {
+  .cocktail-user-card-container {
+    border-radius: 50%;
+  }
   // margin: 100px 100px;
   .title {
     font-size: 1em;
