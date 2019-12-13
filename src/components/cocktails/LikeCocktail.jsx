@@ -42,12 +42,14 @@ const LikeCocktail = ({ likedCocktail, clbk, cocktailsFav }) => {
   }, []);
 
   return (
-    <Card style={{ width: "8rem" }} className="user-cocktail-list">
-      <Card.Img variant="top" src={likedCocktail.Image} />
-      <Card.Body>
-        <Card.Title>{likedCocktail.Name}</Card.Title>
+    <Card style={{ width: "18rem" }} className="user-cocktail-list">
+      <Card.Title className="title">{likedCocktail.Name}</Card.Title>
+      <div className="cocktail-user-card">
+        <Card.Img variant="top" src={likedCocktail.Image} />
+      </div>
 
-        <Dropdown>
+      <Card.Body>
+        <Dropdown className="dropdown-container">
           <Dropdown.Toggle
             variant="success"
             id="dropdown-basic"
@@ -60,11 +62,11 @@ const LikeCocktail = ({ likedCocktail, clbk, cocktailsFav }) => {
           >
             more..
           </Dropdown.Toggle>
-          <i
+          {/* <i
             className="fas fa-glass-cheers"
             onClick={() => clbk(likedCocktail._id)}
           ></i>{" "}
-          <span>{likedCocktail.Like}</span>
+          <span>{likedCocktail.Like}</span> */}
           <Dropdown.Menu>
             <Dropdown.Item href={`/one-cocktail/${likedCocktail._id}`}>
               Show Recipe

@@ -21,14 +21,13 @@ const UserCocktailCard = ({ userCocktails, props }) => {
   }, []);
 
   return (
-    <Card style={{ width: "8rem" }} className="user-cocktail-list">
+    <Card style={{ width: "18rem" }} className="user-cocktail-list">
+      <Card.Title className="title">{userCocktails.Name}</Card.Title>
       <div className="cocktail-user-card">
         <Card.Img variant="top" src={userCocktails.Image} />
       </div>
 
       <Card.Body>
-        <Card.Title>{userCocktails.Name}</Card.Title>
-
         <Dropdown>
           <Dropdown.Toggle
             variant="success"
@@ -51,7 +50,7 @@ const UserCocktailCard = ({ userCocktails, props }) => {
               Edit Cocktails
             </Dropdown.Item>
             <Dropdown.Item href={`/one-cocktail/${userCocktails._id}`}>
-              Show Cart
+              Show Recipe
             </Dropdown.Item>
           </Dropdown.Menu>
         </Dropdown>
