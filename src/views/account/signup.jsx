@@ -12,15 +12,15 @@ const Signup = props => {
     formData.append(key, formValues[key]);
   }
 
-  useEffect(() => {
-    var searchBar = document.getElementById("searchBar");
-    var navBar = document.getElementById("navBar");
-    if (searchBar) {
-      navBar.className = "nav-bar white";
-    } else {
-      navBar.className = "nav-bar regular";
-    }
-  }, []);
+  // useEffect(() => {
+  //   var searchBar = document.getElementById("searchBar");
+  //   var navBar = document.getElementById("navBar");
+  //   if (searchBar) {
+  //     navBar.className = "nav-bar white";
+  //   } else {
+  //     navBar.className = "nav-bar regular";
+  //   }
+  // }, []);
 
   const postAxios = () => {
     axios

@@ -7,6 +7,12 @@
     margin-bottom: 50px;
 }
 
+.measure-ingredient-container {
+    width: 100%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
 .edit-cocktail-container {
     display: flex;
     flex-direction: row;
@@ -17,7 +23,7 @@
 
 .inputEdit {
     display: block;
-    margin: 0 0 20px 0;
+    margin: 20px 0;
     /* width: 100%; */
     padding: 5px 10px;
     font-size: 13px;
@@ -45,6 +51,25 @@
     margin-bottom: 20px;
 }
 
-.fa-plus {
-    align-self: flex-start
+.ingredients-list-edit {
+    width: 100%;
+}
+
+.fa-plus:hover,
+.fa-minus:hover {
+    cursor: pointer;
+}
+
+/* .addCocktail {
+    display: flex;
+    flex-direction: row;
+} */
+
+.ingredientAndMeasureContainer {
+    display: flex;
+    align-items: center;
+}
+
+.inputIngredientContainer {
+    display: flex;
 }

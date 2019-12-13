@@ -23,7 +23,7 @@ const UserCocktailCard = ({ userCocktails, props }) => {
   return (
     <Card style={{ width: "18rem" }} className="user-cocktail-list">
       <Card.Title className="title">{userCocktails.Name}</Card.Title>
-      <div className="cocktail-user-card-container">
+      <div className="cocktail-user-card">
         <Card.Img variant="top" src={userCocktails.Image} />
       </div>
 
