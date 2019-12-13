@@ -16,6 +16,10 @@
     align-content: center;
     .fa-trash-alt {
       padding-left: 9%;
+      cursor: pointer;
+      &:hover {
+        color: orange;
+      }
     }
   }
   .add-ccoktail-container {
