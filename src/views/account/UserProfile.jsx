@@ -122,7 +122,7 @@ const UserProfile = props => {
       </div>
       <div>
         <h5>My Cocktails</h5>
-        <div className="user-cocktail-list-container">
+        <div className="user-cocktail-list">
           {userCocktails.length === 0 ? (
             <p>You don't have any cocktails yet!</p>
           ) : (
@@ -151,8 +151,8 @@ const UserProfile = props => {
       </div>
     </div>
   ) : (
-    <div className="user-profile">
-      <div className="UserProfile">
+    <div className="user-profile-container">
+      <div className="UserProfileContainer">
         <div className="userCardContainer">
           <div className="userCard">
             <div className="userImage">
@@ -189,3 +189,19 @@ const UserProfile = props => {
   );
 };
 export default UserProfile;
+
+// update state of cocktail
+// useEffect(id => {
+//   console.log("icicicicici", id);
+//   axios
+//     .get(
+//       process.env.REACT_APP_BACKEND_URL + "/cocktail/" + props.match.params.id
+//     )
+//     .then(res => {
+//       const copy = cocktails.filter(c => c._id !== id);
+//       setCocktails(copy);
+//     })
+//     .catch(err => {
+//       console.log(err);
+//     });
+// }, []);
