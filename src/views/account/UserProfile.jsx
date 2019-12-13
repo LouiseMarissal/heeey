@@ -91,7 +91,7 @@ const UserProfile = props => {
 
   return currentUser.isPro ? (
     <div className="user-profile-container">
-      <div className="UserProfileContainer container">
+      <div className="UserProfileContainer">
         <div className="userCardContainer">
           <div className="userCard">
             <div className="userImage">
@@ -101,23 +101,26 @@ const UserProfile = props => {
                   alt={currentUser.firstName}
                   className="UserPhotoProfile"
                 />
+
+                <div>
+                  <h5>Add Cocktails</h5>
+                  <Link
+                    rel="stylesheet"
+                    to="/add-cocktail"
+                    className="fas fa-plus"
+                  ></Link>
+                </div>
               </div>
               <div>
                 <h3>Hello {currentUser.firstName}!</h3>
                 <h5>{currentUser.companyName}</h5>
                 <h6>{currentUser.barName}</h6>
-                <div className="add-ccoktail-container">
-                  {/* <h5>Add Cocktails</h5> */}
-                  <Link rel="stylesheet" to="/add-cocktail" className="link">
-                    Add Cocktails
-                  </Link>
-                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="my-cocktails">
+      <div>
         <h5>My Cocktails</h5>
         <div className="user-cocktail-list-container">
           {userCocktails.length === 0 ? (
@@ -134,9 +137,9 @@ const UserProfile = props => {
         </div>
       </div>
 
-      <div className="my-cocktails">
+      <div>
         <h5>My Favorites Cocktails</h5>
-        <div className="user-cocktail-list-container">
+        <div className="user-cocktail-list">
           {favorites.length === 0 ? (
             <p>You don't have any favorites yet !</p>
           ) : (
@@ -170,9 +173,9 @@ const UserProfile = props => {
         </div>
       </div>
 
-      <div className="my-cocktails">
+      <div>
         <h5>My Favorites Cocktails</h5>
-        <div className="user-cocktail-list-container">
+        <div className="user-cocktail-list">
           {favorites.length === 0 ? (
             <p>You don't have any favorites yet !</p>
           ) : (
