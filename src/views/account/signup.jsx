@@ -30,7 +30,6 @@ const Signup = props => {
         console.log("user successfully added to database");
       })
       .catch(err => {
-        console.log(formValues);
         console.log(err);
       });
   };
@@ -57,7 +56,6 @@ const Signup = props => {
     } else if (e.target.type === "file") {
       setFormValues({ ...formValues, [e.target.name]: e.target.files[0] });
     } else return;
-    console.log(formValues);
   };
   return (
     <div className="signup-form-container">

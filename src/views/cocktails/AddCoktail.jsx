@@ -107,7 +107,6 @@ const AddCoktail = props => {
     // }
     formValues.Ingredients = ingredientsFields;
     formValues.Measures = measuresFields;
-    console.log(formValues);
     const formData = new FormData();
     for (let key in formValues) {
       if (Array.isArray(formValues[key])) {
@@ -122,7 +121,6 @@ const AddCoktail = props => {
         withCredentials: true
       })
       .then(res => {
-        console.log("POST COCKTAIL", currentUser._id);
         props.history.push("/profile/" + currentUser._id);
       })
       .catch(err => {

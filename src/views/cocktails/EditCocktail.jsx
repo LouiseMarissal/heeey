@@ -19,7 +19,6 @@ const EditCocktail = props => {
           props.match.params.id
       )
       .then(res => {
-        console.log("ICI?", res.data);
         setCocktail(res.data);
       })
       .catch(err => {
@@ -86,13 +85,10 @@ const EditCocktail = props => {
         { withCredentials: true }
       )
       .then(res => {
-        console.log(currentUser, "currentuser-------");
         props.history.push("/profile/" + currentUser._id);
       })
       .catch(err => console.log(err));
   };
-  console.log(cocktail.Ingredients);
-  console.log(cocktail.Measures);
   if (cocktail.Ingredients !== undefined) {
     return (
       <div className="edit-cocktail-container">
