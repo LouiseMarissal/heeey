@@ -1,4 +1,8 @@
 .user-profile-container {
+  // .cocktail-user-card-container {
+  //   border-radius: 50%;
+  //   display: flex;
+  // }
   .add-ccoktail-container {
     display: flex;
     align-items: center;
@@ -16,15 +20,16 @@
       border-radius: 50%;
       position: center;
       width: 55%;
-      padding-top: 5%;
+      // padding-top: 5%;
     }
   }
   .my-cocktails {
     h5 {
       font-size: 2em;
     }
-    width: 100%;
+    // width: 100%;
     display: flex;
+    flex-wrap: wrap;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -81,9 +86,12 @@
   border-radius: 50%;
 }
 .user-cocktail-list {
+  display: flex;
   // margin: 100px 100px;
   .title {
+    padding-top: 4%;
     font-size: 1em;
+    font-family: "Baloo Bhai", cursive;
   }
   display: flex;
   width: 100%;
@@ -93,11 +101,12 @@
   align-items: center;
   margin: 3% 3% 3% 3%;
   .cocktail-user-card {
-    min-height: 50%;
-
+    height: 150px;
+    width: 150px;
+    border-radius: 50%;
     img {
-      padding-top: 5%;
-      width: 55%;
+      // padding-top: 10%;
+      width: 80%;
     }
   }
 }
@@ -110,7 +119,7 @@
       border-radius: 50%;
       position: center;
       width: 55%;
-      padding-top: 5%;
+      // padding-top: 5%;
     }
   }
 
@@ -163,7 +172,7 @@
       min-height: 50%;
 
       img {
-        padding-top: 5%;
+        // padding-top: 5%;
         width: 55%;
       }
     }

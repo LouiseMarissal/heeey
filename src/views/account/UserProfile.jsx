@@ -119,7 +119,7 @@ const UserProfile = props => {
       </div>
       <div className="my-cocktails">
         <h5>My Cocktails</h5>
-        <div className="user-cocktail-list">
+        <div className="user-cocktail-list-container">
           {userCocktails.length === 0 ? (
             <p>You don't have any cocktails yet!</p>
           ) : (
@@ -153,7 +153,7 @@ const UserProfile = props => {
         <div className="userCardContainer">
           <div className="userCard">
             <div className="userImage">
-              <div className="user">
+              <div className="cocktail-user-card">
                 <img
                   src={currentUser.photo}
                   alt={currentUser.firstName}
