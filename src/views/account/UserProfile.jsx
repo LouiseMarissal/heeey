@@ -12,6 +12,8 @@ const UserProfile = props => {
   const [userCocktails, setUserCocktails] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [newFavorites, setNewFavorites] = useState({});
+  const [like, setLike] = useState([]);
+
   // call user cokctail favorites
   useEffect(id => {
     axios
@@ -33,15 +35,34 @@ const UserProfile = props => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .patch(
+        process.env.REACT_APP_BACKEND_URL +
+          "/userProfile/edit-favorites/" +
+          props.match.params.id,
+        { withCredentials: true }
+      )
+      .then(dbRes => {
+        setFavorites(...newFavorites, dbRes.data.favorites);
+      })
+      .catch(dbErr => {
+        console.log(dbErr);
+      }, []);
+  });
   // Unlike the cocktail
   const handleUnlike = id => {
     const copy = favorites.filter(f => f._id !== id);
     setFavorites(copy);
     // console.log(copy);
     axios
-      .patch(process.env.REACT_APP_BACKEND_URL + "/cocktail/removeLike/" + id, {
-        withCredentials: true
-      })
+      .patch(
+        process.env.REACT_APP_BACKEND_URL + "/cocktail/removeLike/" + id,
+        { favorites },
+        {
+          withCredentials: true
+        }
+      )
       .then(dbRes => {
         setFavorites(...newFavorites, dbRes.data.favorites);
       })

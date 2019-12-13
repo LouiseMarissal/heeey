@@ -53,20 +53,20 @@ const LikeCocktail = ({ likedCocktail, clbk, cocktailsFav }) => {
           <Dropdown.Toggle
             variant="success"
             id="dropdown-basic"
-            className="Manage"
+            className="Manage bounce"
             style={{
               backgroundColor: "#ffb200",
               border: "none",
-              padding: "none"
+              padding: "none",
+              fontSize: ".9em"
             }}
           >
             more..
           </Dropdown.Toggle>
           <i
-            className="fas fa-glass-cheers"
+            className="fas fa-glass-cheers cheersOrange"
             onClick={() => clbk(likedCocktail._id)}
-          ></i>{" "}
-          <span>{likedCocktail.Like}</span>
+          ></i>
           <Dropdown.Menu>
             <Dropdown.Item href={`/one-cocktail/${likedCocktail._id}`}>
               Show Recipe
