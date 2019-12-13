@@ -111,7 +111,13 @@
   border-bottom: 1px solid grey;
   background: transparent;
   margin-top: 7px;
+
+  &::placeholder {
+    color: black
+  }
 }
+
+
 
 ::placeholder {
   color: black;
