@@ -160,7 +160,7 @@ const EditCocktail = props => {
                   </ul>
                 )}
               </div>
-              <div className="ingredientAndMeasureContainer">
+              <div className="ingredientAndMeasureContainerEdit">
                 <div className="inputIngredientsContainer">
                   <input
                     type="text"

@@ -24,7 +24,6 @@
 .inputEdit {
     display: block;
     margin: 20px 0;
-    /* width: 100%; */
     padding: 5px 10px;
     font-size: 13px;
     background: #f2f4f5;
@@ -60,12 +59,7 @@
     cursor: pointer;
 }
 
-/* .addCocktail {
-    display: flex;
-    flex-direction: row;
-} */
-
-.ingredientAndMeasureContainer {
+.ingredientAndMeasureContainerEdit {
     display: flex;
     align-items: center;
 }
