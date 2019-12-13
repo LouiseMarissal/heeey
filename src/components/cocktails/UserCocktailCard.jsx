@@ -23,12 +23,12 @@ const UserCocktailCard = ({ userCocktails, props }) => {
   return (
     <Card style={{ width: "18rem" }} className="user-cocktail-list">
       <Card.Title className="title">{userCocktails.Name}</Card.Title>
-      <div className="cocktail-user-card">
+      <div className="cocktail-user-card-container">
         <Card.Img variant="top" src={userCocktails.Image} />
       </div>
 
       <Card.Body>
-        <Dropdown>
+        <Dropdown className="dropdown-container">
           <Dropdown.Toggle
             variant="success"
             id="dropdown-basic"
