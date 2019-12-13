@@ -24,14 +24,24 @@ li {
     width: 75%;
     margin-top: 2%;
 
-    .title {
+    .titleContainer {
       display: block;
-      font-size: 2em;
-      color: orange;
-      font-family: "Baloo Bhai", cursive;
-      text-transform: uppercase;
-      text-align: end;
-      margin-right: 20%;
+      max-width: 400px;
+      margin-left: 50%;
+      height: auto;
+
+
+      .title {
+        display: block;
+        font-size: 2em;
+        color: orange;
+        font-family: "Baloo Bhai", cursive;
+        text-transform: uppercase;
+        text-align: end;
+
+
+
+      }
     }
 
     .fullDetails {
@@ -71,7 +81,7 @@ li {
             .cocktailImage {
               height: 45% !important;
               position: absolute;
-              bottom: 32%;
+              bottom: 40%;
               left: 12%;
               background-size: cover !important;
               background-position: center !important;
