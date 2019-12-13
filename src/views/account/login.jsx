@@ -7,16 +7,8 @@ export default function Login(props) {
   const [formValues, setFormValues] = useState({});
   const userContext = useContext(UserContext);
   const { setCurrentUser } = userContext;
-
-  useEffect(() => {
-    var searchBar = document.getElementById("searchBar");
-    var navBar = document.getElementById("navBar");
-    if (searchBar) {
-      navBar.className = "nav-bar white";
-    } else {
-      navBar.className = "nav-bar regular";
-    }
-  }, []);
+  const [errorMessage, setErrorMessage] = useState("");
+  const [hideErrorMessage, setHideErrorMessage] = useState(true);
 
   const handleChange = e => {
     setFormValues({ ...formValues, [e.target.name]: e.target.value });
@@ -28,8 +20,13 @@ export default function Login(props) {
       formValues
     })
       .then(dbRes => {
-        setCurrentUser(dbRes.data);
-        props.history.push("/profile/" + dbRes.data._id);
+        if (dbRes.data._id) {
+          setCurrentUser(dbRes.data);
+          props.history.push("/profile/" + dbRes.data._id);
+        } else {
+          setErrorMessage(dbRes.data);
+          setHideErrorMessage(false);
+        }
       })
       .catch(err => console.log(err));
   };
@@ -45,6 +42,14 @@ export default function Login(props) {
           type="password"
           placeholder="*****"
         />
+
+        {!hideErrorMessage ? (
+          <div className="alert alert-warning" role="alert">
+            {errorMessage}
+          </div>
+        ) : (
+          ""
+        )}
         <button className="login-btn">Submit</button>
         <NavLink
           className="link-login"
