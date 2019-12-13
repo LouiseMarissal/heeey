@@ -12,6 +12,8 @@ const UserProfile = props => {
   const [userCocktails, setUserCocktails] = useState([]);
   const [favorites, setFavorites] = useState([]);
   const [newFavorites, setNewFavorites] = useState({});
+  const [like, setLike] = useState([]);
+
   // call user cokctail favorites
   useEffect(id => {
     axios
@@ -25,7 +27,7 @@ const UserProfile = props => {
       )
       .then(dbRes => {
         setFavorites(dbRes.data.favorites);
-        setNewFavorites(...favorites, dbRes.data);
+        setNewFavorites(...favorites);
         // console.log(dbRes.data.favorites);
       })
       .catch(dbErr => {
@@ -33,15 +35,34 @@ const UserProfile = props => {
       });
   }, []);
 
+  useEffect(() => {
+    axios
+      .patch(
+        process.env.REACT_APP_BACKEND_URL +
+          "/userProfile/edit-favorites/" +
+          props.match.params.id,
+        { withCredentials: true }
+      )
+      .then(dbRes => {
+        setFavorites(...newFavorites, dbRes.data.favorites);
+      })
+      .catch(dbErr => {
+        console.log(dbErr);
+      }, []);
+  });
   // Unlike the cocktail
   const handleUnlike = id => {
     const copy = favorites.filter(f => f._id !== id);
     setFavorites(copy);
     // console.log(copy);
     axios
-      .patch(process.env.REACT_APP_BACKEND_URL + "/cocktail/removeLike/" + id, {
-        withCredentials: true
-      })
+      .patch(
+        process.env.REACT_APP_BACKEND_URL + "/cocktail/removeLike/" + id,
+        { favorites },
+        {
+          withCredentials: true
+        }
+      )
       .then(dbRes => {
         setFavorites(...newFavorites, dbRes.data.favorites);
       })
@@ -62,6 +83,7 @@ const UserProfile = props => {
         }
       )
       .then(dbRes => {
+        console.log(dbRes.data);
         setUserCocktails(dbRes.data);
       })
       .catch(err => {
@@ -83,6 +105,8 @@ const UserProfile = props => {
         console.log(err);
       });
   };
+
+  console.log(favorites);
 
   if (isLoading || !currentUser) return null;
 
@@ -116,7 +140,7 @@ const UserProfile = props => {
       </div>
       <div className="my-cocktails">
         <h5>My Cocktails</h5>
-        <div className="user-cocktail-list">
+        <div className="user-cocktail-list-container">
           {userCocktails.length === 0 ? (
             <p>You don't have any cocktails yet!</p>
           ) : (
@@ -150,7 +174,7 @@ const UserProfile = props => {
         <div className="userCardContainer">
           <div className="userCard">
             <div className="userImage">
-              <div className="user">
+              <div className="cocktail-user-card">
                 <img
                   src={currentUser.photo}
                   alt={currentUser.firstName}
