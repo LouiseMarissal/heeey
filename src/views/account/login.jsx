@@ -28,8 +28,6 @@ export default function Login(props) {
       formValues
     })
       .then(dbRes => {
-        console.log("after signin ok ", dbRes);
-
         setCurrentUser(dbRes.data);
         props.history.push("/profile/" + dbRes.data._id);
       })

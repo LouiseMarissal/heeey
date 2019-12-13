@@ -62,7 +62,6 @@ const UserProfile = props => {
         }
       )
       .then(dbRes => {
-        console.log(dbRes.data);
         setUserCocktails(dbRes.data);
       })
       .catch(err => {
@@ -84,8 +83,6 @@ const UserProfile = props => {
         console.log(err);
       });
   };
-
-  console.log(favorites);
 
   if (isLoading || !currentUser) return null;
 
