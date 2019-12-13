@@ -62,7 +62,6 @@ const UserProfile = props => {
         }
       )
       .then(dbRes => {
-        console.log(dbRes.data);
         setUserCocktails(dbRes.data);
       })
       .catch(err => {
@@ -84,8 +83,6 @@ const UserProfile = props => {
         console.log(err);
       });
   };
-
-  console.log(favorites);
 
   if (isLoading || !currentUser) return null;
 
@@ -186,19 +183,3 @@ const UserProfile = props => {
   );
 };
 export default UserProfile;
-
-// update state of cocktail
-// useEffect(id => {
-//   console.log("icicicicici", id);
-//   axios
-//     .get(
-//       process.env.REACT_APP_BACKEND_URL + "/cocktail/" + props.match.params.id
-//     )
-//     .then(res => {
-//       const copy = cocktails.filter(c => c._id !== id);
-//       setCocktails(copy);
-//     })
-//     .catch(err => {
-//       console.log(err);
-//     });
-// }, []);
