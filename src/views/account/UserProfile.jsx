@@ -11,7 +11,7 @@ const UserProfile = props => {
   const { isLoading, currentUser } = useAuth();
   const [userCocktails, setUserCocktails] = useState([]);
   const [favorites, setFavorites] = useState([]);
-
+  const [newFavorites, setNewFavorites] = useState({});
   // call user cokctail favorites
   useEffect(id => {
     axios
@@ -25,6 +25,7 @@ const UserProfile = props => {
       )
       .then(dbRes => {
         setFavorites(dbRes.data.favorites);
+        setNewFavorites(...favorites, dbRes.data);
         // console.log(dbRes.data.favorites);
       })
       .catch(dbErr => {
@@ -42,8 +43,7 @@ const UserProfile = props => {
         withCredentials: true
       })
       .then(dbRes => {
-        setFavorites(dbRes);
-        console.log(dbRes);
+        setFavorites(...newFavorites, dbRes.data.favorites);
       })
       .catch(dbErr => {
         console.log(dbErr);
