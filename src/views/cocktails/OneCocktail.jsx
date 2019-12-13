@@ -2,9 +2,11 @@ import React, { useState, useEffect } from "react";
 import "./../../css/OneCocktail.scss";
 import axios from "axios";
 import FormComment from "../../components/comments/FormComment";
+import { useAuth } from "../../auth/useAuth";
 
 export default function OneCocktail(props) {
   const [cocktail, setCocktail] = useState([]);
+  const { isLoading, currentUser } = useAuth();
 
   useEffect(() => {
     axios
@@ -75,7 +77,7 @@ export default function OneCocktail(props) {
           </div>
           <FormComment
             CocktailId={props.match.params.id}
-            UserId={props.match.params.id}
+            UserId={{ currentUser }}
           />
         </div>
       </>

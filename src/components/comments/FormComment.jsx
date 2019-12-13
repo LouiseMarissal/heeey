@@ -13,6 +13,12 @@ const AddComment = props => {
   const inputComment = useRef();
 
   useEffect(() => {
+    if (currentUser)
+      Setuser({ photo: currentUser.photo, name: currentUser.name });
+    console.log(props.UserId);
+  }, []);
+
+  useEffect(() => {
     axios
       .get(
         process.env.REACT_APP_BACKEND_URL +
@@ -27,16 +33,10 @@ const AddComment = props => {
       .catch(err => console.log(err));
   }, []);
 
-  useEffect(() => {
-    if (currentUser) {
-      Setuser({ photo: currentUser.photo, name: currentUser.name });
-    }
-  }, []);
-
   const handleChange = e => {
     setMessage({ ...message, [e.target.name]: e.target.value });
     Setuser({ photo: currentUser.photo, name: currentUser.name });
-    console.log(message);
+    console.log("je suis l'userID", props.UserId);
   };
 
   const handleSubmit = e => {
