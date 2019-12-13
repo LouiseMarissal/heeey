@@ -4,7 +4,6 @@ body {
   font-family: sans-serif;
   background: white;
   min-height: 100vh;
-  max-width: 1370px !important;
 }
 
 ::-webkit-scrollbar-track {
