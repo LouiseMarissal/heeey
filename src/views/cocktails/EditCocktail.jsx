@@ -149,7 +149,7 @@ const EditCocktail = props => {
                 ) : (
                   <ul className="ingredientList">
                     {ingredientsFields.map((ingredient, i) => (
-                      <li key={i} className="ingredients-list">
+                      <li key={i} className="ingredients-list-edit">
                         {ingredient} {measuresFields[i]}
                         <i
                           className="fas fa-minus"
@@ -160,30 +160,30 @@ const EditCocktail = props => {
                   </ul>
                 )}
               </div>
+              <div className="ingredientAndMeasureContainer">
+                <div className="inputIngredientsContainer">
+                  <input
+                    type="text"
+                    ref={ingredientsRef}
+                    name="Ingredients"
+                    className="inputEdit"
+                    placeholder="Add Ingredient"
+                  />
 
-              <input
-                className="inputEdit"
-                type="text"
-                ref={ingredientsRef}
-                name="Ingredients"
-                className="input"
-                placeholder="Add Ingredient"
-              />
-
-              <input
-                className="inputEdit"
-                type="text"
-                ref={measuresRef}
-                name="Measures"
-                className="input"
-                placeholder="Measure"
-              />
-            </div>
-
-            <div className="addCocktail">
-              <span className="addButton">
-                <i className="fas fa-plus" onClick={addIngredientInput}></i>
-              </span>
+                  <input
+                    type="text"
+                    ref={measuresRef}
+                    name="Measures"
+                    className="inputEdit"
+                    placeholder="Measure"
+                  />
+                </div>
+                <div className="addCocktail">
+                  <span className="addButton">
+                    <i className="fas fa-plus" onClick={addIngredientInput}></i>
+                  </span>
+                </div>
+              </div>
             </div>
           </div>
           <button className="btn-Edit">Edit</button>
