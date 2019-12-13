@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
+import "./../../css/EditCocktail.css";
 import { useAuth } from "../../auth/useAuth";
 const EditCocktail = props => {
   const { isLoading, currentUser } = useAuth();
@@ -95,10 +96,15 @@ const EditCocktail = props => {
   if (cocktail.Ingredients !== undefined) {
     return (
       <div className="edit-cocktail-container">
-        <h1>Edit your cocktail</h1>
-        <form onSubmit={handleSubmit} onChange={handleChange}>
-          <p>Name</p>
+        <form
+          className="formEdit"
+          onSubmit={handleSubmit}
+          onChange={handleChange}
+        >
+          <h1 className="titleEdit">Edit your cocktail</h1>
           <input
+            className="inputEdit"
+            placeholder="Name"
             name="Name"
             type="text"
             defaultValue={cocktail.Name}
@@ -106,24 +112,34 @@ const EditCocktail = props => {
             id="Name"
           />
 
-          <p>Glass</p>
           <input
+            className="inputEdit"
+            placeholder="Glass"
             name="Glass"
             id="Glass"
             type="text"
             defaultValue={cocktail.Glass}
             onChange={handleChange}
           />
-          <p>Recipe</p>
+
           <input
+            className="inputEdit"
+            placeholder="Instructions"
             name="Instructions"
             id="Instructions"
             type="text"
             defaultValue={cocktail.Instructions}
             onChange={handleChange}
           />
-          <p>IMAGE</p>
-          <input type="file" onChange={handleChange} id="Image" name="Image" />
+
+          <input
+            className="inputEdit"
+            placeholder="Image"
+            type="file"
+            onChange={handleChange}
+            id="Image"
+            name="Image"
+          />
           <div className="measure-ingredient-container">
             <div className={`ingredient-container`}>
               <div
@@ -131,7 +147,7 @@ const EditCocktail = props => {
                   ingredientsFields.length === 0 ? "" : "yellow-border"
                 }`}
               >
-                <h4 className="h4">Add ingredients</h4>
+                <h4 className="add-Ingredient-title">Add ingredients</h4>
                 {ingredientsFields.length === 0 ? (
                   <p className="ingredientInfo">No ingredients yet!</p>
                 ) : (
@@ -150,6 +166,7 @@ const EditCocktail = props => {
               </div>
 
               <input
+                className="inputEdit"
                 type="text"
                 ref={ingredientsRef}
                 name="Ingredients"
@@ -158,6 +175,7 @@ const EditCocktail = props => {
               />
 
               <input
+                className="inputEdit"
                 type="text"
                 ref={measuresRef}
                 name="Measures"
@@ -172,7 +190,7 @@ const EditCocktail = props => {
               </span>
             </div>
           </div>
-          <button className="btn">Edit</button>
+          <button className="btn-Edit">Edit</button>
         </form>
       </div>
     );
