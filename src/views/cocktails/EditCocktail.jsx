@@ -8,6 +8,8 @@ const EditCocktail = props => {
   const [cocktail, setCocktail] = useState({});
   const [ingredientsFields, setIngredientsFields] = useState([]);
   const [measuresFields, setMeasuresFields] = useState([]);
+  const [tags, setTags] = useState([]);
+  const [tagsAdded, setTagsAdded] = useState([]);
   const ingredientsRef = useRef();
   const measuresRef = useRef();
 
@@ -19,12 +21,73 @@ const EditCocktail = props => {
           props.match.params.id
       )
       .then(res => {
-        setCocktail(res.data);
+        setCocktail(res.data.fullCocktail);
+        setIngredientsFields(res.data.fullCocktail.Ingredients);
+        setMeasuresFields(res.data.fullCocktail.Measures);
+        setTagsAdded(res.data.fullCocktail.tags);
+
+        // let tagsLeftToAdd = res.data.fullTags.filter(tagLeft => {
+        //   for (let i = 0; i < tagsAdded; i++) {
+        //     console.log(tagsAdded[i]._id);
+        //     if (tagLeft._id !== tagsAdded[i]._id) {
+        //       console.log("différent !");
+        //     }
+        //   }
+        // });
+        // console.log("coucou");
+        // console.log(tagsLeftToAdd);
+        // setTags(tagsLeftToAdd);
       })
       .catch(err => {
         console.log(err);
       });
   }, [props.match.params.id]);
+
+  const addTag = e => {
+    const tagsToAdd = [...tags];
+    let tagsToDelete = [...tagsAdded];
+    tagsToAdd.forEach((tag, i) => {
+      if (tag._id === e.target.id) {
+        tagsToAdd.splice(i, 1);
+        if (tagsToDelete.length === 0) {
+          tagsToDelete = [tag];
+        } else tagsToDelete.push(tag);
+      }
+    });
+    setTags(tagsToAdd);
+    setTagsAdded(tagsToDelete);
+    const copiedValues = { ...formValues };
+    if (Array.isArray(copiedValues.tags)) {
+      copiedValues.tags.push(e.target.id);
+    } else copiedValues.tags = [e.target.id];
+    setFormValues(copiedValues);
+  };
+
+  const removeTag = e => {
+    let tagsToAdd = [...tags];
+    let tagsToDelete = [...tagsAdded];
+    const copiedValues = { ...formValues };
+    tagsToDelete.forEach((tag, i) => {
+      if (tag._id === e.target.id) {
+        tagsToDelete.splice(i, 1);
+        if (tagsToAdd.length === 0) {
+          tagsToAdd = [tag];
+        } else tagsToAdd.push(tag);
+      }
+    });
+    setTags(tagsToAdd);
+    setTagsAdded(tagsToDelete);
+    if (copiedValues.tags) {
+      if (copiedValues.tags.length > 1) {
+        copiedValues.tags.forEach((id, i) => {
+          if (id === e.target.id) {
+            copiedValues.tags.splice(i, 1);
+          }
+        });
+      } else copiedValues.tags = [];
+      setFormValues(copiedValues);
+    }
+  };
 
   // ADD ingredients & Measures in list
   const addIngredientInput = e => {
@@ -46,13 +109,12 @@ const EditCocktail = props => {
   const removeIngredients = e => {
     e.preventDefault();
     var array = [...ingredientsFields];
-    var index = array.indexOf(e.target.value);
+    var index = e.target.id;
     array.splice(index, 1);
     setIngredientsFields(array);
 
     var measureArray = [...measuresFields];
-    var index2 = measureArray.indexOf(e.target.value);
-    measureArray.splice(index2, 1);
+    measureArray.splice(index, 1);
     setMeasuresFields(measureArray);
   };
 
@@ -118,15 +180,17 @@ const EditCocktail = props => {
             onChange={handleChange}
           />
 
-          <input
-            className="inputEdit"
+          <textarea
+            className="inputEdit inputEdit-textArea"
             placeholder="Instructions"
             name="Instructions"
             id="Instructions"
-            type="text"
             defaultValue={cocktail.Instructions}
             onChange={handleChange}
-          />
+            maxLength="500"
+            rows="4"
+            required
+          ></textarea>
 
           <input
             className="inputEdit"
@@ -153,6 +217,7 @@ const EditCocktail = props => {
                         {ingredient} {measuresFields[i]}
                         <i
                           className="fas fa-minus"
+                          id={i}
                           onClick={removeIngredients}
                         ></i>
                       </li>
@@ -186,6 +251,44 @@ const EditCocktail = props => {
               </div>
             </div>
           </div>
+          <h4 className="h4">Add tags</h4>
+          {tagsAdded.length === 0 ? (
+            <p className="tagsInfo-edit">No tags yet!</p>
+          ) : (
+            <div className="tagsList">
+              {tagsAdded.map((tag, i) => (
+                <span
+                  key={i}
+                  className="tagContainer button"
+                  id={tag._id}
+                  onClick={removeTag}
+                >
+                  {tag.name}
+                  <i className="fas fa-minus" id={tag._id}></i>
+                </span>
+              ))}
+            </div>
+          )}
+          {tags.length > 0 ? (
+            <div className="tagsList">
+              {tags.map((tag, i) => (
+                <span
+                  key={i}
+                  className="tagContainer button"
+                  onClick={addTag}
+                  id={tag._id}
+                >
+                  {tag.name}
+                  <i className="fas fa-plus" id={tag._id}></i>
+                </span>
+              ))}
+            </div>
+          ) : (
+            <p className="tagsInfo-edit">
+              Wow ! This cocktail has a lot of tags !
+            </p>
+          )}
+
           <button className="btn-Edit">Edit</button>
         </form>
       </div>

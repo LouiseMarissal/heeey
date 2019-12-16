@@ -76,7 +76,7 @@ const AddComment = props => {
                 id="message"
                 placeholder="leave a comment here..."
                 maxLength="300"
-                size="10"
+                // size="10"
                 required
                 onChange={handleChange}
               ></textarea>

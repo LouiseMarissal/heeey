@@ -18,6 +18,7 @@ const AddCoktail = props => {
         withCredentials: true
       })
       .then(dbRes => {
+        console.log(dbRes.data);
         setTags(dbRes.data);
       })
       .catch(dbErr => console.log(dbErr));
@@ -160,11 +161,12 @@ const AddCoktail = props => {
                 className="input"
                 placeholder="Glass"
               />
-              <input
+              <textarea
                 type="text"
                 name="Instructions"
                 className="input"
                 placeholder="Recipe"
+                rows="4"
               />
               <div className="measure-ingredient-container">
                 <div className={`ingredient-container`}>
@@ -209,12 +211,8 @@ const AddCoktail = props => {
                 </div>
 
                 <div className="addCocktail">
-                  <span className="addButton"
-                  onClick={addIngredientInput}>
-                    <i
-                      className="fas fa-plus button"
-                      
-                    ></i>
+                  <span className="addButton" onClick={addIngredientInput}>
+                    <i className="fas fa-plus button"></i>
                   </span>
                 </div>
                 {/* START OF ADD TAG */}

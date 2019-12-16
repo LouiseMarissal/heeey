@@ -47,13 +47,10 @@ li {
     .fullDetails {
       background: linear-gradient(rgba(63, 63, 63, 0.1), rgb(255, 255, 255));
       // border: solid 1px gray;
-      margin: 5%;
+      margin: 1% 0 5% 5%;
       padding: 5%;
-      margin-top: 1%;
       padding-top: 1%;
       height: 100%;
-      padding-bottom: 10%;
-      margin-right: 0;
       border-radius: 12px;
 
 
@@ -78,16 +75,18 @@ li {
 
           .cocktailImageContainer {
             width: 100%;
+            min-width: 25vw;
+            min-height: 45vh;
+            max-height: 50vh;
+            padding: 0 5vw;
+            margin-top: -5%;
+            margin-bottom: 5%;
 
             .cocktailImage {
-              height: 45% !important;
-              position: absolute;
-              bottom: 40%;
-              left: 12%;
+              height: 100%;
+              width: 100%;
               background-size: cover !important;
               background-position: center !important;
-              width: 23vw !important;
-
             }
           }
 
@@ -129,109 +128,41 @@ li {
         }
       }
     }
-
-    //   .oneCocktail {
-    //     background: black;
-    //     display: flex;
-    //     flex-direction: column;
-    //     // align-items: stretch;
-    //     box-shadow: 4px 4px 3px 3px grey;
-    //     margin: 5%;
-    //     padding: 5%;
-    //     margin-top: 1%;
-    //     padding-top: 1%;
-
-    //     .imageAndInfoContainer {
-    //       width: 100%;
-    //       margin: 0;
-    //       padding: 0;
-
-    //       .fullDetails,
-    //       .oneCocktailImage {
-    //         height: 100% !important;
-    //       }
-
-    //       .fullDetails {
-    //         display: flex;
-    //         flex-direction: row;
-    //         align-items: space-evenly;
-    //         width: 100%;
-    //         color: white;
-    //         height: auto;
-    //         border: solid 1px white;
-    //         // padding: 0 auto;
-    //         margin: 0;
-    //         max-width: 400px;
-
-    //         .whatDoINeed,
-    //         .howDoIMakeIt {
-    //           display: block;
-    //           color: orange;
-    //           font-family: "Baloo Bhai", cursive;
-    //           text-transform: uppercase;
-    //           font-size: 1.3em;
-    //         }
-
-    //         .fullInstructions {
-    //           width: 100%;
-
-    //           .instructions {}
-
-    //           .fullIngredients {
-    //             display: flex;
-    //             flex-direction: column;
-    //             width: 100%;
-
-    //             .measures,
-    //             .ingredients {
-    //               font-size: 1em;
-    //             }
-    //           }
-    //         }
-
-    //       }
-
-    //       .oneCocktailImageContainer {
-    //         width: 30%;
-    //         height: 50% !important;
-    //         position: absolute;
-    //         bottom: 10%;
-    //         z-index: 0 !important;
-    //         // max-width: 400px;
-
-
-    //         .oneCocktailImage {
-    //           background-size: cover !important;
-    //           background-position: center !important;
-    //           width: 100%;
-    //         }
-    //       }
-    //     }
-    //   }
   }
 }
 
-// @media only screen and (max-width : 1100px) {
-//   .oneCocktail {
-//     flex-direction: column;
-//     align-items: center;
-//     justify-content: center;
+@media only screen and (min-width : 1400px) {
 
-//     .imageAndInfoContainer {
-//       display: flex !important;
-//       flex-direction: column !important;
-//       height: auto !important;
+  .howDoIMakeIt,
+  .whatDoINeed {
+    font-size: 1.5em !important;
+  }
 
-//       .oneCocktailImageContainer,
-//       .fullInstructions,
-//       .oneCocktailImage {
-//         width: 100% !important;
-//         height: 100% !important;
-//       }
+  .howDoIMakeIt {
+    .instructions {
+      font-size: 1.3em !important;
+    }
+  }
 
-//       .oneCocktailImage {
-//         z-index: 10;
-//       }
-//     }
-//   }
-// }
+  .imageAndIngredientContainer {
+    .ingredientAndMeasureContainer {
+      font-size: 1.3em !important;
+    }
+  }
+
+  .message {
+    .dateMessage {
+      font-size: 1em !important;
+    }
+
+    .contentMessage {
+      font-size: 1.5em !important;
+    }
+  }
+
+  .fullUser {
+    .userName {
+      font-size: 1.5em !important;
+    }
+  }
+}

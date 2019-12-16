@@ -123,14 +123,11 @@
 
 .measure-container {
   margin: 3%;
-  /* display: flex; */
-  /* flex-direction: column; */
   width: 50%;
 }
 
 .is-alcoholic {
   display: flex;
-  /* justify-content: space-between; */
 
   label {
     font-size: 13px;
@@ -146,6 +143,5 @@
 }
 
 .fa-minus {
-  /* padding-left: 4.5%; */
   cursor: s;
 }

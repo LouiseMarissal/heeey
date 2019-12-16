@@ -31,6 +31,13 @@
     width: 100%;
 }
 
+.inputEdit-textArea {
+    height: 100px;
+    /* box-sizing: border-box; */
+    resize: none;
+    width: 100%;
+}
+
 .btn-Edit {
     display: block;
     background: #ffb200;
@@ -66,4 +73,12 @@
 
 .inputIngredientContainer {
     display: flex;
+}
+
+.tagsInfo-edit {
+    display: block;
+    width: 100%;
+    color: #ffb200;
+    font-family: "Niconne", cursive;
+    font-size: 29px;
 }
